@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';;
 import express from 'express';
 import swaggerUI from 'swagger-ui-express'
-import MovieHandler from './src/handlers/movie-handler.js';
+import MovieHandler from './src/routes/movie-handler.js';
 import specs from './src/configs/swagger-conf.js'
 
 dotenv.config({path: `env/.env`});
