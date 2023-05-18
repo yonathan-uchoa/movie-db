@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "type": "module",
-    "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
   },
@@ -33,7 +33,7 @@
     "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
     "supertest": "^6.3.3",
-    "swagger": "^0.7.5",
-    "swagger-jsdoc": "^6.2.8"
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3"
   }
 }
