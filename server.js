@@ -1,7 +1,20 @@
-import dotenv from 'dotenv';
-import { app } from './src/rest-server.js'
-dotenv.config({path: `env/.env`})
+import dotenv from 'dotenv';;
+import express from 'express';
+import swaggerUI from 'swagger-ui-express'
+import MovieHandler from './src/handlers/movie-handler.js';
+import specs from './src/configs/swagger-conf.js'
 
-app.listen(process.env.SERVER_PORT, () => {
-    console.log(`app listen at ${process.env.SERVER_PORT}`);
-})
+dotenv.config({path: `env/.env`});
+const PORT = process.env.SERVER_PORT || 3000;
+
+
+const app = express();
+
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
+app.use(express.json());
+
+app.use("/movie", MovieHandler);
+
+app.listen(PORT, () => {
+    console.log(`app listen at ${PORT}`);
+});
