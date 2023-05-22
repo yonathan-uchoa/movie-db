@@ -1,6 +1,5 @@
 import express from 'express';
 import TmdbService from '../services/tmdb-service.js';
-
 const app = express.Router();
 
 /**
@@ -26,7 +25,10 @@ const app = express.Router();
  */
 app.get('/movie/search', async (req, res) => {
     const { name, page } = req.query;
-    const language = req.headers["accept-language"].split(',');
+
+    let language = [undefined]
+    language = req.headers['accept-language'].split(',');
+    
     const response = await TmdbService.searchMovieByName(name, language[0], page);
     res.status(response.status).send({data: response.data});
 });
