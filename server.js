@@ -1,8 +1,9 @@
-import dotenv from 'dotenv';;
+import dotenv from 'dotenv';
 import express from 'express';
-import swaggerUI from 'swagger-ui-express'
+import swaggerUI from 'swagger-ui-express';
 import MovieHandler from './src/routes/movie-handler.js';
-import specs from './src/configs/swagger-conf.js'
+import TmdbHandler from './src/routes/tmdb-handler.js';
+import specs from './src/configs/swagger-conf.js';
 import initServer from './src/database/mongodb-test.js';
 
 dotenv.config({path: `env/.env`});
@@ -16,6 +17,8 @@ app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
 app.use(express.json());
 
 app.use("/movie", MovieHandler);
+app.use("/tmdb",TmdbHandler);
+
 
 app.listen(PORT, () => {
     console.log(`app listen at ${PORT}`);
