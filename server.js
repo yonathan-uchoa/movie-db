@@ -23,3 +23,5 @@ app.use("/tmdb",TmdbHandler);
 app.listen(PORT, () => {
     console.log(`app listen at ${PORT}`);
 });
+
+export default app;
