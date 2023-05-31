@@ -16,7 +16,11 @@ The tecnologies I way by use in this project will be:
  - [x] Consume TMDB API;
  - [x] Create initial Model to *Movie*;
  - [ ] Update *Movie* Model;
+ - [ ] Create *Movie* and *Movie routes* test;
  - [ ] Create *User* model;
+ - [ ] Create *User* test;
+ - [ ] Create *User routes*;
+ - [ ] Create *User* authetication with JWT;
  - [x] Create Swagger.io documentation for current task;
 
 ### front
